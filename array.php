@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array - Hilda Yuliani</title>
+</head>
+<body>
 <?php 
- 
 //penamaan isi array variabel Biodata
 $Biodata = array(
 	'Nama' => "Hilda Yuliani",
@@ -11,3 +16,5 @@ $Biodata = array(
 // menampilkan isi array yang bernama Jurusan
 echo $Biodata['Jurusan'];
 ?>
+</body>
+</html>
