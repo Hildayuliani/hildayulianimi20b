@@ -8,7 +8,7 @@ $barang = Array( '', 'Proyektor', 'Camera', 'Komputer', 'Processor');
 <!DOCTYPE html>
 <html>
 <head>
-    <table border="2">
+    <table border="3">
         <tr> 
             <td>
 
@@ -33,15 +33,19 @@ $barang = Array( '', 'Proyektor', 'Camera', 'Komputer', 'Processor');
         echo $Instansi[$x]."<br/>";
         }
         echo "<br>";
-        echo "Dengan adanya surat ini saya Hilda Yuliani meminta izin untuk meminjam :";
-        for($x=0;$x<count($barang);$x++){
+        echo "Dengan adanya surat ini saya Hilda Yuliani meminta izin untuk meminjam : ";
+        echo "<br>";
+        for($x=1;$x<count($barang);$x++){
             echo "$x." .$barang[$x]."<br/>";
+            
         }
-
         echo "Atas perhatiannya saya ucapkan terima kasih. ";
         echo "<br>";
         echo "<br>";
+        echo "<br>";
         echo "Tanda Tangan";
+        echo "<br>";
+        echo "<br>";
         echo "<br>";
         echo "<br>";
         echo "Hilda Yuliani";
