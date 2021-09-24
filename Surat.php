@@ -3,20 +3,20 @@ $tgl = "date";
 $kota = "Tasikmalaya";
 $ttd = "Hilda Yuliani";
 $Instansi = Array( 'LP3I', 'Kota Tasikmalaya', '(0265311766)');
-$barang = Array( '', 'Proyektor', 'Camera', 'Komputer');
+$barang = Array( '', 'Proyektor', 'Camera', 'Komputer', 'Processor');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <table border="1">
-        <tr>
+    <table border="2">
+        <tr> 
             <td>
 
     <title>Surat - Hilda Yuliani</title>
 </head>
 <body>
     <?php
-        echo "Surat Peminjaman";
+        echo "<center>" ."Surat Peminjaman" ."</center>";
         echo "<br>";
         echo $kota;
         echo ", ";
