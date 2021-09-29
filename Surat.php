@@ -5,7 +5,7 @@ $ttd = "Hilda Yuliani";
 $Instansi = Array( 'LP3I', 'Kota Tasikmalaya', '(0265311766)');
 $barang = Array( '', 'Proyektor', 'Camera', 'Komputer', 'Processor');
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
     <table border="3">
