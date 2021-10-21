@@ -24,12 +24,12 @@ $result = $con->query($sql);
 		<div class="card-body">
 			<form class="row g-3">
 			  <div class="col-md-6">
-			    <label for="inputEmail4" class="form-label">Nomor Surat</label>
-			    <input type="email" class="form-control" id="inputEmail4">
+			    <label for="noSurat" class="form-label">Nomor Surat</label>
+			    <input type="email" class="form-control" id="noSurat">
 			  </div>
 			  <div class="col-md-6">
-			    <label for="inputState" class="form-label">Jenis Surat</label>
-			    <select id="inputState" class="form-select">
+			    <label for="jenisSurat" class="form-label">Jenis Surat</label>
+			    <select id="jenisSurat" class="form-select">
 			      <option selected>Silahkan Pilih...</option>
 			      <option>Surat Keputusan</option>
 			      <option>Surat Pernyataan</option>
@@ -41,21 +41,21 @@ $result = $con->query($sql);
 			    <input type="password" class="form-control" id="inputPassword4">
 			  </div> -->
 			  <div class="col-12">
-			    <label for="inputAddress" class="form-label">Tanggal Surat</label>
-			    <input type="text" class="form-control" id="inputAddress" placeholder="mm/dd/yyyy">
+			    <label for="tglSurat" class="form-label">Tanggal Surat</label>
+			    <input type="text" class="form-control" id="tglSurat" placeholder="mm/dd/yyyy">
 			  </div>
 			  <div class="col-12">
-			    <label for="inputAddress2" class="form-label">Pembuat Surat</label>
-			    <input type="text" class="form-control" id="inputAddress2" placeholder="">
+			    <label for="ttdSurat" class="form-label">Pembuat Surat</label>
+			    <input type="text" class="form-control" id="ttdSurat" placeholder="">
 			  </div>
 			  <div class="col-md-6">
-			    <label for="inputCity" class="form-label">Mengetahui</label>
-			    <input type="text" class="form-control" id="inputCity">
+			    <label for="ttdMengetahui" class="form-label">Mengetahui</label>
+			    <input type="text" class="form-control" id="ttdMengetahui">
 			  </div>
 			  
 			  <div class="col-md-6">
-			    <label for="inputZip" class="form-label">Menyetujui</label>
-			    <input type="text" class="form-control" id="inputZip">
+			    <label for="ttdMenyetujui" class="form-label">Menyetujui</label>
+			    <input type="text" class="form-control" id="ttdMenyetujui">
 			  </div>
 			  <!-- <div class="col-12">
 			    <div class="form-check">
