@@ -22,52 +22,40 @@ $result = $con->query($sql);
 		<div class="card">
 		<H2 align="center">Tambah Surat</H2>
 		<div class="card-body">
-			<form class="row g-3">
+			<form class="row g-3" action="add.php" method="post" name="form1">
 			  <div class="col-md-6">
 			    <label for="noSurat" class="form-label">Nomor Surat</label>
-			    <input type="email" class="form-control" id="noSurat">
+			    <input type="text" class="form-control" id="noSurat" name="noSurat" placeholder="" required>
 			  </div>
 			  <div class="col-md-6">
 			    <label for="jenisSurat" class="form-label">Jenis Surat</label>
-			    <select id="jenisSurat" class="form-select">
-			      <option selected>Silahkan Pilih...</option>
-			      <option>Surat Keputusan</option>
-			      <option>Surat Pernyataan</option>
-			      <option>Surat Peminjaman</option>
+			    <select id="jenisSurat" name="jenisSurat" class="form-select" required>
+			      <option selected value="">Silahkan Pilih...</option>
+			      <option value="1">Surat Keputusan</option>
+			      <option value="2">Surat Pernyataan</option>
+			      <option value="3">Surat Peminjaman</option>
 			    </select>
 			  </div>
-			  <!-- <div class="col-md-6">
-			    <label for="inputPassword4" class="form-label">Nomor Surat</label>
-			    <input type="password" class="form-control" id="inputPassword4">
-			  </div> -->
 			  <div class="col-12">
 			    <label for="tglSurat" class="form-label">Tanggal Surat</label>
-			    <input type="text" class="form-control" id="tglSurat" placeholder="mm/dd/yyyy">
+			    <input type="date" class="form-control" id="tglSurat" name="tglSurat" placeholder="mm/dd/yyyy" required>
 			  </div>
 			  <div class="col-12">
 			    <label for="ttdSurat" class="form-label">Pembuat Surat</label>
-			    <input type="text" class="form-control" id="ttdSurat" placeholder="">
+			    <input type="text" class="form-control" id="ttdSurat" name="ttdSurat" placeholder="" required>
 			  </div>
 			  <div class="col-md-6">
 			    <label for="ttdMengetahui" class="form-label">Mengetahui</label>
-			    <input type="text" class="form-control" id="ttdMengetahui">
+			    <input type="text" class="form-control" id="ttdMengetahui" name="ttdMengetahui" required>
 			  </div>
 			  
 			  <div class="col-md-6">
 			    <label for="ttdMenyetujui" class="form-label">Menyetujui</label>
-			    <input type="text" class="form-control" id="ttdMenyetujui">
+			    <input type="text" class="form-control" id="ttdMenyetujui" name="ttdMenyetujui" required>
 			  </div>
-			  <!-- <div class="col-12">
-			    <div class="form-check">
-			      <input class="form-check-input" type="checkbox" id="gridCheck">
-			      <label class="form-check-label" for="gridCheck">
-			        Check me out
-			      </label>
-			    </div>
-			  </div> -->
 			  <div class="col-12">
-			    <button type="submit" class="btn btn-primary">Add</button>
-			    <button type="submit" class="btn btn-danger">Cancel</button>
+			    <button type="submit" class="btn btn-primary" name="simpan">Add</button>
+			    <button type="button" class="btn btn-danger">Cancel</button>
 			  </div>
 			</form>
 		</div>
@@ -77,7 +65,7 @@ $result = $con->query($sql);
 	<?php
 
 
-		if(isset($_POST['submit'])) {
+		if(isset($_POST['simpan'])) {
 			$no_surat = $_POST['noSurat'];
 			$jenis_surat = $_POST['jenisSurat'];
 			$tgl_surat = $_POST['tglSurat'];
@@ -86,8 +74,8 @@ $result = $con->query($sql);
 			$ttd_menyetujui = $_POST['ttdMenyetujui'];
 
 			//Insert user data info table
-			$result = mysqli_query($mysqli, "INSERT INTO tbl_surat
-				(id,no_surat,jenis_surat,ttd_surat,ttd_mengetahui,ttd_menyetujui) VALUES('',$no_surat','$jenis_surat','$tgl_surat','$ttd_mengetahui','$ttd_menyetujui')");
+			$result = mysqli_query($con , "INSERT INTO tbl_surat
+				(id,no_surat,jenis_surat,tgl_surat,ttd_surat,ttd_mengetahui,ttd_menyetujui) VALUES ('','$no_surat','$jenis_surat','$tgl_surat','$ttd_surat','$ttd_mengetahui','$ttd_menyetujui')");
 
 			//Show message when user added
 			echo "User added Successfully. <a href='view.php'>List Surat</a>";
