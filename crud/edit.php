@@ -97,7 +97,8 @@ if ($isi['jenis_surat'] == 1) {
 
       //Show message when user added
       /*echo "Surat Updated Successfully. <a href='view.php'>List Surat</a>";*/
-      header("Location:view.php");
+      
+      header("Location:view.php?pesan=success&&frm=edit");
     }
   ?>
   </body>

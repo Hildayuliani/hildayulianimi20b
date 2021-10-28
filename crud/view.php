@@ -17,7 +17,34 @@ $result = $con->query($sql);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+  <div class="container">
+    <?php //ALLERT SETTING AKHIR
+    $pesan = $_GET['pesan'];
+    $frm = $_GET['frm'];
+    
+    if ($pesan=='success' && $frm =='del') {
+    ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Berhasil!!</strong> Anda Berhasil menghapus.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php
+} else if($pesan=='success' && $frm =='add') {
+?>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>Berhasil!</strong> Selamat anda berhasil menambahkan.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php
+} else if($pesan=='success' && $frm =='edit') {
+?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Berhasil!</strong> Selamat anda berhasil merubah Data.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php
+ }
+ ?>
   <h1><center><b>Jenis Surat</b></center></h1>
 
   <table class="table table-bordered table-striped">
@@ -27,6 +54,8 @@ $result = $con->query($sql);
         <th>Jenis Surat</th>
         <th>Tanggal Surat</th>
         <th>TTD Surat</th>
+        <th>TTD Mengetahui</th>
+        <th>TTD Menyetujui</th>
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -49,8 +78,10 @@ $result = $con->query($sql);
     <td><?php echo $js;?></td>
     <td><?php echo $isi['tgl_surat'];?></td>
     <td><?php echo $isi['ttd_surat'];?></td>
-    <td><center><a href ="edit.php?id=<?php echo $isi['id'];?>"><button class="btn btn-warning btn-sm">Edit</a></button></center></td>
-    <td><center><a href="#" data-bs-toggle="modal" data-bs-target="#deletesurat<?php echo $isi ['id'];?>"><button class="btn btn-success btn-sm">Delete</a></button></center></td>
+    <td><?php echo $isi['ttd_mengetahui'];?></td>
+    <td><?php echo $isi['ttd_menyetujui'];?></td>
+    <td><center><a class="btn bg-warning btn-sm" href ="edit.php?id=<?php echo $isi['id'];?>">Edit</a></button></center></td>
+    <td><center><button class="btn btn-success btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#deletesurat<?php echo $isi ['id'];?>">Delete</a></button></center></td>
   </tr>
   <div class="example-modal">
     <div id="deletesurat<?php echo $isi ['id'];?>" class="modal fade" role="dialog" style="display: none;">
@@ -78,6 +109,8 @@ $result = $con->query($sql);
   <?php
   }
 ?>
+<p><a href="add.php">Tambah Surat</a></p>
+</div>
 
 
 </body>

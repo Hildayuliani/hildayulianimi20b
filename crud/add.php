@@ -4,8 +4,9 @@ error_reporting(0);
 $con = new mysqli("localhost","root", "","db_surathilda");
 $tgl = date ('d F Y');
 
-$sql = "SELECT * FROM tbl_surat";
-$result = $con->query($sql);
+$query = mysqli_query($con, "SELECT * FROM tbl_jenis_surat");
+/*$sql = "SELECT * FROM tbl_surat";*/
+/*$result = $con->query($sql);*/
 ?>
 
 <!DOCTYPE html>
@@ -30,10 +31,16 @@ $result = $con->query($sql);
 			  <div class="col-md-6">
 			    <label for="jenisSurat" class="form-label">Jenis Surat</label>
 			    <select id="jenisSurat" name="jenisSurat" class="form-select" required>
-			      <option selected value="">Silahkan Pilih...</option>
-			      <option value="1">Surat Keputusan</option>
-			      <option value="2">Surat Pernyataan</option>
-			      <option value="3">Surat Peminjaman</option>
+			      <option selected value="">Silahkan Pilih</option>
+
+
+			      <?php
+  		foreach ($query as $js) {
+    	?>
+    	<option value="<?=$js['id_js']?>"><?=$js['jenis_surat']?> </option>
+    	<?php //QUERY DATA TABEL jenis_surat
+		}
+    	?>
 			    </select>
 			  </div>
 			  <div class="col-12">
@@ -79,7 +86,7 @@ $result = $con->query($sql);
 
 			//Show message when user added
 			/*echo "User added Successfully. <a href='view.php'>List Surat</a>";*/
-			header("Location:view.php");
+			header("Location:view.php?pesan=success&&frm=add");
 		}
 	?>
 </body>
