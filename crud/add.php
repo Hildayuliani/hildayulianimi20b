@@ -78,7 +78,8 @@ $result = $con->query($sql);
 				(id,no_surat,jenis_surat,tgl_surat,ttd_surat,ttd_mengetahui,ttd_menyetujui) VALUES ('','$no_surat','$jenis_surat','$tgl_surat','$ttd_surat','$ttd_mengetahui','$ttd_menyetujui')");
 
 			//Show message when user added
-			echo "User added Successfully. <a href='view.php'>List Surat</a>";
+			/*echo "User added Successfully. <a href='view.php'>List Surat</a>";*/
+			header("Location:view.php");
 		}
 	?>
 </body>
