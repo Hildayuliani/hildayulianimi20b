@@ -77,7 +77,7 @@ if ($isi['jenis_surat'] == 1) {
         </div>
       </form>
     </div>
-    </div>
+    </div> 
   </row>
   </div>
   <?php

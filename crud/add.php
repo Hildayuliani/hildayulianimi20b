@@ -8,7 +8,7 @@ $query = mysqli_query($con, "SELECT * FROM tbl_jenis_surat");
 /*$sql = "SELECT * FROM tbl_surat";*/
 /*$result = $con->query($sql);*/
 ?>
-
+  
 <!DOCTYPE html>
 <html>
 <head>

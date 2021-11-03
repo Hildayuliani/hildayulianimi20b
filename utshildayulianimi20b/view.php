@@ -66,11 +66,11 @@ $result = $con->query($sql);
 <?php
 
   foreach ($result as $isi){
-   if ($isi["jenis_pelayanan"]=='1'){
+   if ($isi["jenis_pelayanan"] == 1){
       $jp = "UMUM";
-    } else if($isi["jenis_pelayanan"]=='2'){
+    } else if($isi["jenis_pelayanan"] == 2){
       $jp = "BPJS";
-    } else if ($isi["jenis_pelayanan"]=='3'){
+    } else if ($isi["jenis_pelayanan"] == 3){
       $jp = "JAMKESMAS";
     }else {
       $jp = "Kode Bermasalah";
@@ -84,7 +84,7 @@ $result = $con->query($sql);
     <td><?php echo $isi['umur'];?></td>
     <td><?php echo $isi['diagnosa_penyakit'];?></td>
     <td><?php echo $isi['nama_dokter'];?></td>
-    <td><?php echo $isi['jenis_pelayanan'];?></td>
+    <td><?= $jp ?></td>
     <td><center><a class="btn bg-warning btn-sm" href ="edit.php?id=<?php echo $isi['id'];?>">Edit</a></button></center></td>
     <td><center><button class="btn btn-success btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#deletesurat<?php echo $isi ['id'];?>">Delete</a></button></center></td>
 

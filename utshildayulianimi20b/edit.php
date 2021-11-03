@@ -38,11 +38,11 @@ if ($isi['jenis_pelayanan'] == 1) {
         <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi['id']?>" required>
         <div class="col-md-6">
           <label for="noPasien" class="form-label">Nomor Pasien</label>
-          <input type="text" class="form-control" id="noPasien" name="noPasien" value="<?php echo $isi['nomor_surat']?>" required>
+          <input type="text" class="form-control" id="nomor_pasien" name="nomor_pasien" value="<?php echo $isi['nomor_pasien']?>" required>
         </div>
         <div class="col-md-6">
-          <label for="jenisPelayanan" class="form-label">Jenis Pelayanan</label>
-          <select id="jenisPelayanan" name="jenisPelayanan" class="form-select" value="<?php echo $isi['jenis_pelayanan']?>" required> 
+          <label for="jenis_pelayanan" class="form-label">Jenis Pelayanan</label>
+          <select id="jenis_pelayanan" name="jenis_pelayanan" class="form-select" value="<?php echo $isi['jenis_pelayanan']?>" required> 
             <option selected value="<?php echo $isi['jenis_pelayanan']?>" ><?php echo $js?></option>
             <option value="1">UMUM</option>
             <option value="2">BPJS</option>
@@ -55,29 +55,35 @@ if ($isi['jenis_pelayanan'] == 1) {
         </div> -->
         <div class="col-12">
           <label for="namaPasien" class="form-label">Nama Pasien</label>
-          <input type="text" class="form-control" id="namaPasien" name="namaPasien" placeholder="mm/dd/yyyy" value="<?php echo $isi['nama_pasien']?>" required>
+          <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" placeholder="" value="<?php echo $isi['nama_pasien']?>" required>
+        </div>
+            <div class="col-12">
+          <label for="jk" class="form-label">Jenis Kelamin</label><br>
+          <label><input type="radio" name="jenis_kelamin" value="Laki-Laki" required>Laki-Laki</label>
+          <label><input type="radio" name="jenis_kelamin" value="Perempuan" required>Perempuan</label>
+          <!-- <input type="text" class="form-control" id="jk" name="jk" placeholder="" required> -->
         </div>
         <div class="col-12">
-          <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
-          <input type="date" class="form-control" id="tanggalLahir" name="tanggalLahir" placeholder="" value="<?php echo $isi['tgl_lahir']?>" required>
+          <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+          <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="" value="<?php echo $isi['tgl_lahir']?>" required>
         </div>
         <div class="col-md-6">
-          <label for="umr" class="form-label">Umur</label>
-          <input type="text" class="form-control" id="umr" name="umr" value="<?php echo $isi['umur']?>" required>
-        </div>
-        
-        <div class="col-md-6">
-          <label for="diagnosaPenyakit" class="form-label">Diagnosa Penyakit</label>
-          <input type="text" class="form-control" id="diagnosaPenyakit" name="diagnosaPenyakit" value="<?php echo $isi['diagnosa_penyakit']?>" required>
+          <label for="umur" class="form-label">Umur</label>
+          <input type="text" class="form-control" id="umur" name="umur" value="<?php echo $isi['umur']?>" required>
         </div>
         
         <div class="col-md-6">
-          <label for="namaDokter" class="form-label">Nama Dokter</label>
-          <input type="text" class="form-control" id="namaDokter" name="namaDokter" value="<?php echo $isi['nama_dokter']?>" required>
+          <label for="diagnosa_penyakit" class="form-label">Diagnosa Penyakit</label>
+          <input type="text" class="form-control" id="diagnosa_penyakit" name="diagnosa_penyakit" value="<?php echo $isi['diagnosa_penyakit']?>" required>
+        </div>
+        
+        <div class="col-md-6">
+          <label for="nama_dokter" class="form-label">Nama Dokter</label>
+          <input type="text" class="form-control" id="nama_dokter" name="nama_dokter" value="<?php echo $isi['nama_dokter']?>" required>
         </div>
 
         <div class="col-12">
-          <button type="submit" class="btn btn-primary" name="update">Update</button>
+          <button type="submit" class="btn btn-primary" name="submit">Update</button>
           <button type="button" class="btn btn-danger">Batal</button>
         </div>
       </form>
@@ -87,15 +93,15 @@ if ($isi['jenis_pelayanan'] == 1) {
   </div>
   <?php
 
-if(isset($_POST['simpan'])) {
-    $nomor_pasien = $_POST['nomorPasien'];
-    $nama_pasien = $_POST['namaPasien'];
-    $tgl_lahir = $_POST['tglLahir'];
-    $jenis_kelamin = $_POST['jenisKelamin'];
+if(isset($_POST['submit'])) {
+    $nomor_pasien = $_POST['nomor_pasien'];
+    $nama_pasien = $_POST['nama_pasien'];
+    $tgl_lahir = $_POST['tgl_lahir'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
     $umur = $_POST['umur'];
-    $diagnosa_penyakit = $_POST['diagnosaPenyakit'];
-    $nama_dokter = $_POST['namaDokter'];
-    $jenis_pelayanan = $_POST['jenisPelayanan'];
+    $diagnosa_penyakit = $_POST['diagnosa_penyakit'];
+    $nama_dokter = $_POST['nama_dokter'];
+    $jenis_pelayanan = $_POST['jenis_pelayanan'];
 
     //Insert user data info table
     $result = mysqli_query($con , "INSERT INTO tabel_pasien

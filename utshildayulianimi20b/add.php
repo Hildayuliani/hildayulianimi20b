@@ -25,39 +25,39 @@ $query = mysqli_query($con, "SELECT * FROM tabel_pasien");
 			<form class="row g-3" action="add.php" method="post" name="form1">
 			  <div class="col-md-12">
 			    <label for="noPasien" class="form-label">Nomor Pasien</label>
-			    <input type="text" class="form-control" id="noPasien" name="noPasien" placeholder="" required>
+			    <input type="text" class="form-control"  name="nomor_pasien" placeholder="" required>
 			  </div>
 			  <div class="col-md-12">
 			    <label for="noPasien" class="form-label">Nama Pasien</label>
-			    <input type="text" class="form-control" id="noPasien" name="noPasien" placeholder="" required>
+			    <input type="text" class="form-control"  name="nama_pasien" placeholder="" required>
 			  </div>
 			<div class="col-12">
 			    <label for="tglLahir" class="form-label">Tanggal Lahir</label>
-			    <input type="date" class="form-control" id="tglLahir" name="tglLahir" placeholder="mm/dd/yyyy" required>
+			    <input type="date" class="form-control"  name="tgl_lahir" placeholder="mm/dd/yyyy" required>
 			  </div>
 			  <div class="col-12">
 			    <label for="jk" class="form-label">Jenis Kelamin</label><br>
-			    <label><input type="radio" id="jk" name="jk" value="Laki-Laki" required>Laki-Laki</label>
-			    <label><input type="radio" id="jk" name="jk" value="Perempuan" required>Perempuan</label>
+			    <label><input type="radio" name="jenis_kelamin" value="Laki-Laki" required>Laki-Laki</label>
+			    <label><input type="radio" name="jenis_kelamin" value="Perempuan" required>Perempuan</label>
 			    <!-- <input type="text" class="form-control" id="jk" name="jk" placeholder="" required> -->
 			  </div>
 			  <div class="col-md-12">
 			    <label for="umr" class="form-label">Umur</label>
-			    <input type="text" class="form-control" id="umr" name="umr" required>
+			    <input type="text" class="form-control" id="umr" name="umur" required>
 			  </div>
 			  <div class="col-md-12">
 			    <label for="diagnosa" class="form-label">Diagnosa Penyakit</label>
-			    <input type="text" class="form-control" id="diganosa" name="diagnosa" required>
+			    <input type="text" class="form-control" id="diganosa" name="diagnosa_penyakit" required>
 			  </div>
 			      <div class="col-md-12">
 			    <label for="namaDokter" class="form-label">Nama Dokter</label>
-			    <input type="text" class="form-control" id="namaDokter" name="namaDokter" required>
+			    <input type="text" class="form-control" id="namaDokter" name="nama_dokter" required>
 			  </div>
 			  <div class="col-md-12">
           <label for="jenisPelayanan" class="form-label">Jenis Pelayanan</label>
-          <select id="jenisPelayanan" name="jenisPelayanan" class="form-select" value="<?php echo $isi['jenis_pelayanan']?>" required> 
+          <select id="jenisPelayanan" name="jenis_pelayanan" class="form-select" value="<?php echo $isi['jenis_pelayanan']?>" required> 
             <option selected value="<?php echo $isi['jenis_pelayanan']?>" ><?php echo $js?>Silahkan Pilih..</option>
-            <option value="1">UMUM</option>
+            <option value="UMUM">UMUM</option>
             <option value="2">BPJS</option>
             <option value="3">JAMKESMAS</option>
           </select>
@@ -92,14 +92,14 @@ $query = mysqli_query($con, "SELECT * FROM tabel_pasien");
 
 
 		if(isset($_POST['simpan'])) {
-			$nomor_pasien = $_POST['nomorPasien'];
-			$nama_pasien = $_POST['namaPasien'];
-			$tgl_lahir = $_POST['tglLahir'];
-			$jenis_kelamin = $_POST['jenisKelamin'];
+			$nomor_pasien = $_POST['nomor_pasien'];
+			$nama_pasien = $_POST['nama_pasien'];
+			$tgl_lahir = $_POST['tgl_lahir'];
+			$jenis_kelamin = $_POST['jenis_kelamin'];
 			$umur = $_POST['umur'];
-			$diagnosa_penyakit = $_POST['diagnosaPenyakit'];
-			$nama_dokter = $_POST['namaDokter'];
-			$jenis_pelayanan = $_POST['jenisPelayanan'];
+			$diagnosa_penyakit = $_POST['diagnosa_penyakit'];
+			$nama_dokter = $_POST['nama_dokter'];
+			$jenis_pelayanan = $_POST['jenis_pelayanan'];
 
 			//Insert user data info table
 			$result = mysqli_query($con , "INSERT INTO tabel_pasien

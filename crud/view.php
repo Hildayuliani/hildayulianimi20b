@@ -51,7 +51,7 @@ $result = $con->query($sql);
     <thead class="table-dark text-center">
       <tr>
         <th>No Surat</th>
-        <th>Jenis Surat</th>
+        <th>Jenis Surat</th> 
         <th>Tanggal Surat</th>
         <th>TTD Surat</th>
         <th>TTD Mengetahui</th>
