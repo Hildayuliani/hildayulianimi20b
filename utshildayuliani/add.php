@@ -24,15 +24,37 @@ $query = mysqli_query($con, "SELECT * FROM tabel_jenis_pelayanan");
 		<H2 align="center">Tambah Pasien</H2>
 		<div class="card-body">
 			<form class="row g-3" action="add.php" method="post" name="form1">
-			  <div class="col-md-6">
+			  <div class="col-md-3">
 			    <label for="nomorpasien" class="form-label">Nomor Pasien</label>
 			    <input type="text" class="form-control" id="nomorpasien" name="nomorpasien" placeholder="" required>
 			  </div>
-			  <div class="col-md-6">
+			  <div class="col-md-9">
 			    <label for="namapasien" class="form-label">Nama Pasien</label>
 			    <input type="text" class="form-control" id="namapasien" name="namapasien" placeholder="" required>
 			  </div>
-			  <div class="col-md-6">
+			  
+			  <div class="col-12">
+			    <label for="tgllahir" class="form-label">Tanggal Lahir</label>
+			    <input type="date" class="form-control" id="tgllahir" name="tgllahir" placeholder="mm/dd/yyyy" required>
+			  </div>
+			  <div class="col-12">
+			    <label for="jk" class="form-label">Jenis Kelamin</label><br>
+			    <label><input type="radio" name="jeniskelamin" id="jeniskelamin" value="Laki-Laki" required>Laki-Laki</label><br>
+			    <label><input type="radio" name="jeniskelamin" id="jeniskelamin" value="Perempuan" required>Perempuan</label>
+			    <!-- <input type="text" class="form-control" id="jk" name="jk" placeholder="" required> -->
+			  </div>
+
+			  <div class="col-md-3">
+			    <label for="umur" class="form-label">Umur</label>
+			    <input type="text" class="form-control" id="umur" name="umur" required>
+			  </div>
+			  
+			  <div class="col-md-9">
+			    <label for="diagnosapenyakit" class="form-label">Diagnosa Penyakit</label>
+			    <input type="text" class="form-control" id="diagnosapenyakit" name="diagnosapenyakit" required>
+			  </div>
+
+			  <div class="col-md-12">
 			    <label for="jenispelayanan" class="form-label">Jenis Pelayanan</label>
 			    <select id="jenispelayanan" name="jenispelayanan" class="form-select" required>
 			      <option selected value="">Silahkan Pilih</option>
@@ -47,24 +69,10 @@ $query = mysqli_query($con, "SELECT * FROM tabel_jenis_pelayanan");
     	?>
 			    </select>
 			  </div>
-			  <div class="col-12">
-			    <label for="tgllahir" class="form-label">Tanggal Lahir</label>
-			    <input type="date" class="form-control" id="tgllahir" name="tgllahir" placeholder="mm/dd/yyyy" required>
-			  </div>
-			  <div class="col-12">
-			    <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
-			    <input type="text" class="form-control" id="jeniskelamin" name="jeniskelamin" placeholder="" required>
-			  </div>
-			  <div class="col-md-6">
-			    <label for="umur" class="form-label">Umur</label>
-			    <input type="text" class="form-control" id="umur" name="umur" required>
-			  </div>
-			  
-			  <div class="col-md-6">
-			    <label for="diagnosapenyakit" class="form-label">Diagnosa Penyakit</label>
-			    <input type="text" class="form-control" id="diagnosapenyakit" name="diagnosapenyakit" required>
-			  </div>
-			  <div class="col-md-6">
+
+
+
+			  <div class="col-md-12">
 			    <label for="namadokter" class="form-label">Nama Dokter</label>
 			    <input type="text" class="form-control" id="namadokter" name="namadokter" required>
 			  </div>

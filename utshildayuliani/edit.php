@@ -36,48 +36,64 @@ if ($isi['jenis_pelayanan'] == 1) {
     <div class="card-body">
       <form class="row g-3" action="edit.php" method="post" name="form1">
         <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi['id']?>" required>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <label for="nomorpasien" class="form-label">Nomor Pasien</label>
           <input type="text" class="form-control" id="nomorpasien" name="nomorpasien" value="<?php echo $isi['nomor_pasien']?>" required>
         </div>
-        <div class="col-md-6">
-          <label for="namapasien" class="form-label">Nama Pasien</label>
-          <input type="text" class="form-control" id="namapasien" name="namapasien" value="<?php echo $isi['nama_pasien']?>" required>
-        </div>
-        <div class="col-md-6">
+
+                <div class="col-md-9">
           <label for="jenispelayanan" class="form-label">Jenis Pelayanan</label>
           <select id="jenispelayanan" name="jenispelayanan" class="form-select" value="<?php echo $isi['jenis_pelayanan']?>" required> 
-            <option selected value="<?php echo $isi['jenis_surat']?>" ><?php echo $js?></option>
+            <option selected value="<?php echo $isi['jenis_surat']?>" ><?php echo $js?>Silahkan Pilih..</option>
             <option value="1">UMUM</option>
             <option value="2">BPJS</option>
             <option value="3">JAMKESMAS</option>
           </select>
         </div>
-        <!-- <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Nomor Surat</label>
-          <input type="password" class="form-control" id="inputPassword4">
-        </div> -->
+
+
+
+        <div class="col-md-12">
+          <label for="namapasien" class="form-label">Nama Pasien</label>
+          <input type="text" class="form-control" id="namapasien" name="namapasien" value="<?php echo $isi['nama_pasien']?>" required>
+        </div>
+
         <div class="col-12">
           <label for="tgllahir" class="form-label">Tanggal Lahir</label>
           <input type="date" class="form-control" id="tgllahir" name="tgllahir" value="<?php echo $isi['tgl_lahir']?>" placeholder="mm/dd/yyyy" required>
         </div>
-        <div class="col-12">
-          <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
-          <input type="text" class="form-control" id="jeniskelamin" name="jeniskelamin" value="<?php echo $isi['jenis_kelamin']?>"placeholder="" required>
-        </div>
+
         <div class="col-md-6">
           <label for="umur" class="form-label">Umur</label>
           <input type="text" class="form-control" id="umur" name="umur" value="<?php echo $isi['umur']?>"required>
         </div>
-        
+
+        <div class="col-6">
+          <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
+          <input type="text" class="form-control" id="jeniskelamin" name="jeniskelamin" value="<?php echo $isi['jenis_kelamin']?>"placeholder="" required>
+        </div>
+
         <div class="col-md-6">
           <label for="diagnosapenyakit" class="form-label">Diagnosa Penyakit</label>
           <input type="text" class="form-control" id="diagnosapenyakit" name="diagnosapenyakit" value="<?php echo $isi['diagnosa_penyakit']?>" required>
         </div>
+
         <div class="col-md-6">
           <label for="namadokter" class="form-label">Nama Dokter</label>
           <input type="text" class="form-control" id="namadokter" name="namadokter" value="<?php echo $isi['nama_dokter']?>"required>
         </div>
+
+
+        <!-- <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Nomor Surat</label>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div> -->
+        
+        
+        
+        
+        
+        
         
         <div class="col-12">
           <button type="submit" class="btn btn-primary" name="update">Update</button>
