@@ -127,6 +127,7 @@ if ($isi['jenis_pelayanan'] == 1) {
 
 
     if(isset($_POST['update'])) {
+      $id = $_POST['id'];
       $no_pasien = $_POST['nomorpasien'];
       $nama_pasien = $_POST['namapasien'];
       $tgl_lahir = $_POST['tgllahir'];
@@ -137,8 +138,7 @@ if ($isi['jenis_pelayanan'] == 1) {
       $jenis_pelayanan = $_POST['jenispelayanan'];
 
       //Insert user data info table
-     $result = mysqli_query($con , "INSERT INTO tabel_pasien
-        (id,nomor_pasien,nama_pasien,tgl_lahir,jenis_kelamin,umur,diagnosa_penyakit,nama_dokter,jenis_pelayanan) VALUES ('','$no_pasien','$nama_pasien','$tgl_lahir','$jenis_kelamin','$umur','$diagnosa_penyakit','$nama_dokter','$jenis_pelayanan')");
+     $result = mysqli_query($con , "UPDATE `tabel_pasien` SET `nomor_pasien` = '$no_pasien', `nama_pasien` = '$nama_pasien', `tgl_lahir` = '$tgl_lahir', `umur` = '$umur', `diagnosa_penyakit` = '$diagnosa_penyakit', `nama_dokter` = '$nama_dokter', `jenis_kelamin` = '$jenis_kelamin', `jenis_pelayanan` = '$jenis_pelayanan' WHERE `tabel_pasien`.`id` = $id");
 
       //Show message when user added
       /*echo "Surat Updated Successfully. <a href='view.php'>List Surat</a>";*/
