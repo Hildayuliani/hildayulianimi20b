@@ -77,7 +77,7 @@ $query = mysqli_query($con, "SELECT * FROM tabel_pasien");
   		foreach ($query as $js) {
     	?>
     	<option value="<?=$js['jenis_pelayanan']?>"><?=$js['jenis_pelayan']?> </option>
-    	<?php //QUERY DATA TABEL jenis_surat
+    	<?php //QUERY DATA TABEL jenis_pelayanan
 		}
     	?>
 			    </select>
