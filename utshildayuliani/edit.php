@@ -3,7 +3,7 @@ error_reporting(0);
 $con = new mysqli("localhost", "root", "", "pasien_hilda");
 
 $tgl = date('d F Y');
-$id = $_GET['id'];
+$id = $_GET['id'];  
 $query = mysqli_query($con, "SELECT * FROM tabel_pasien where id = '$id'");
 $isi = $query->fetch_assoc();
 if ($isi['jenis_pelayanan'] == 1) {

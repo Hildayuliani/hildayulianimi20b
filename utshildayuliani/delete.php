@@ -3,7 +3,7 @@
 $con = new mysqli("localhost","root", "","pasien_hilda");
 
   if(isset($_POST['delete'])) {
-      $id=$_POST['id'];
+      $id=$_POST['id'];  
       
   
       //Insert user data info table

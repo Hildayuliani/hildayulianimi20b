@@ -10,7 +10,7 @@ $query = mysqli_query($con, "SELECT * FROM tabel_jenis_pelayanan");
 ?>
   
 <!DOCTYPE html>
-<html>
+<html>  
 <head>
 	<title>Tambah Pasien</title>
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">

@@ -5,7 +5,7 @@ $con = new mysqli("localhost","root", "","pasien_hilda");
 $tgl = date ('d F Y');
 
 $sql = "SELECT * FROM tabel_pasien";
-$result = $con->query($sql);
+$result = $con->query($sql);   
 ?>
 
 <!DOCTYPE html>
