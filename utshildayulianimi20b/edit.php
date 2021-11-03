@@ -94,6 +94,7 @@ if ($isi['jenis_pelayanan'] == 1) {
   <?php
 
 if(isset($_POST['submit'])) {
+    $id = $_POST['id'];
     $nomor_pasien = $_POST['nomor_pasien'];
     $nama_pasien = $_POST['nama_pasien'];
     $tgl_lahir = $_POST['tgl_lahir'];
@@ -104,7 +105,7 @@ if(isset($_POST['submit'])) {
     $jenis_pelayanan = $_POST['jenis_pelayanan'];
 
     //Insert user data info table
-    $result = mysqli_query($con , "INSERT INTO tabel_pasien
+    $result = mysqli_query($con , "UPDATE tabel_pasien
         (id,nomor_pasien,nama_pasien,tgl_lahir,jenis_kelamin,umur,diagnosa_penyakit,nama_dokter,jenis_pelayanan) 
         VALUES ('','$nomor_pasien','$nama_pasien','$tgl_lahir','$jenis_kelamin','$umur','$diagnosa_penyakit','$nama_dokter','$jenis_pelayanan')");
     

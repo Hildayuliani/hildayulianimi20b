@@ -97,12 +97,12 @@ $result = $con->query($sql);
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class ="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
-            <h3 class="modal-title">Konfirmasi Delete Data Surat</h3>
+            <h3 class="modal-title">Konfirmasi Delete Data Pasien</h3>
           </div>
           <form class="row g-3" action="delete.php" method="post" name="form1">
           <div class="modal-body">
               <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $isi ['id'];?>" required>
-            <h4 align="center">Apakah Anda Yakin Ingin Menghapus No Surat? <?php echo $isi ['no_surat'];?><strong><span class="grt"></span></strong></h4>
+            <h4 align="center">Apakah Anda Yakin Ingin Menghapus Data Pasien? <?php echo $isi ['no_surat'];?><strong><span class="grt"></span></strong></h4>
           </div>
           <div class="modal-footer">
            <button id="nodelete" type="button" class="btn btn-primary pull-left" data-bs-dismiss="modal">Cancel</button> 
